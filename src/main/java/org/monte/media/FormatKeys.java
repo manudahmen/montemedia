@@ -19,7 +19,7 @@ import org.monte.media.math.Rational;
  * @version $Id: FormatKeys.java 299 2013-01-03 07:40:18Z werner $
  */
 public class FormatKeys {
-     public static enum MediaType {
+     public enum MediaType {
         AUDIO,
         VIDEO,
         MIDI,

@@ -118,9 +118,9 @@ public class AbstractQuickTimeStream {
     /**
      * The states of the movie output stream.
      */
-    protected static enum States {
+    protected enum States {
 
-        REALIZED, STARTED, FINISHED, CLOSED;
+        REALIZED, STARTED, FINISHED, CLOSED
     }
     /**
      * The current state of the movie output stream.

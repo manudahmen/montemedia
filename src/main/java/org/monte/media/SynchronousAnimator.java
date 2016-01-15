@@ -74,10 +74,10 @@ public class SynchronousAnimator implements Animator {
         // Avoid enqueuing new interpolators which must be run sequentally
         // with active interpolators.
         OuterLoop: for (int i=0; i < newInterpolators.size(); i++) {
-            Interpolator candidate = (Interpolator) newInterpolators.get(i);
+            Interpolator candidate = newInterpolators.get(i);
             boolean isEnqueueable = true;
             for (int j=0; j < i; j++) {
-                Interpolator before = (Interpolator) newInterpolators.get(j);
+                Interpolator before = newInterpolators.get(j);
                 if (candidate.isSequential(before)) {
                     isEnqueueable = false;
                     break;
@@ -85,7 +85,7 @@ public class SynchronousAnimator implements Animator {
             }
             if (isEnqueueable) {
                 for (int j=0; j < activeInterpolators.size(); j++) {
-                    Interpolator before = (Interpolator) activeInterpolators.get(j);
+                    Interpolator before = activeInterpolators.get(j);
                     if (candidate.replaces(before)) {
                         before.finish(now);
                     }
@@ -107,7 +107,7 @@ public class SynchronousAnimator implements Animator {
         // Animate the active interpolators
         // Remove finished interpolators.
         for (int i=0; i < activeInterpolators.size(); i++) {
-            Interpolator active = (Interpolator) activeInterpolators.get(i);
+            Interpolator active = activeInterpolators.get(i);
             if (active.isFinished()) {
                 activeInterpolators.remove(i--);
             } else if (active.isElapsed(now)) {

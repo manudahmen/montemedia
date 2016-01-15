@@ -84,7 +84,7 @@ public class WeakPropertyChangeListener implements PropertyChangeListener {
 
     @Override
     public void propertyChange(PropertyChangeEvent event) {
-        PropertyChangeListener listener = (PropertyChangeListener) weakRef.get();
+        PropertyChangeListener listener = weakRef.get();
         if (listener == null) {
             removeFromSource(event);
             return;

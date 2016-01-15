@@ -66,7 +66,7 @@ public class JTimelineEditor extends javax.swing.JPanel {
 
     enum Handle {
 
-        InsertionPoint, SelectionStart, SelectionEnd;
+        InsertionPoint, SelectionStart, SelectionEnd
     }
     private Handle focusedHandle = null;
 

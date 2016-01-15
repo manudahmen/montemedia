@@ -534,12 +534,12 @@ public class BitmapImage
     public BitmapImage clone() {
         try {
             BitmapImage theClone = (BitmapImage) super.clone();
-            theClone.bitmap = (byte[]) bitmap.clone();
+            theClone.bitmap = bitmap.clone();
             if (getPixelType() == BYTE_PIXEL) {
-                theClone.bytePixels = (byte[]) bytePixels.clone();
+                theClone.bytePixels = bytePixels.clone();
             }
             if (getPixelType() == INT_PIXEL) {
-                theClone.intPixels = (int[]) intPixels.clone();
+                theClone.intPixels = intPixels.clone();
             }
             return theClone;
         } catch (CloneNotSupportedException e) {
@@ -628,7 +628,7 @@ public class BitmapImage
         } else {
             if (planarColorModel instanceof IndexColorModel) {
                 if (enforceDirectColors_ || preferredChunkyColorModel_ instanceof DirectColorModel) {
-                    if (preferredChunkyColorModel_ != null && ((DirectColorModel) preferredChunkyColorModel_).getPixelSize() == 16) {
+                    if (preferredChunkyColorModel_ != null && preferredChunkyColorModel_.getPixelSize() == 16) {
                         if (shortPixels == null || shortPixels.length != getWidth() * getHeight()) {
                             bytePixels = null;
                             intPixels = null;
@@ -669,7 +669,7 @@ public class BitmapImage
                     pixelType = BYTE_PIXEL;
                 }
             } else if (planarColorModel instanceof DirectColorModel) {
-                if (((DirectColorModel) planarColorModel).getPixelSize() == 16) {
+                if (planarColorModel.getPixelSize() == 16) {
                     if (shortPixels == null || shortPixels.length != getWidth() * getHeight()) {
                         bytePixels = null;
                         intPixels = null;

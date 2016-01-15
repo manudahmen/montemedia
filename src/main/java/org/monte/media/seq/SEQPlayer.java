@@ -837,12 +837,12 @@ public class SEQPlayer
             bitmap = bitmapEven;
             fetchedEven = index;
             if (fetched == index + interleave && track.getFrame(fetched).isBidirectional()) {
-                frame = (SEQFrame) track.getFrame(fetched);
+                frame = track.getFrame(fetched);
                 frame.decode(bitmap, track);
                 return;
             } else {
                 if (fetched > index) {
-                    frame = (SEQFrame) track.getFrame(0);
+                    frame = track.getFrame(0);
                     frame.decode(bitmap, track);
                     fetched = 0;
                 }
@@ -856,21 +856,21 @@ public class SEQPlayer
             bitmap = bitmapOdd;
             fetchedOdd = index;
             if (fetched == index + interleave && track.getFrame(fetched).isBidirectional()) {
-                frame = (SEQFrame) track.getFrame(fetched);
+                frame = track.getFrame(fetched);
                 frame.decode(bitmap, track);
                 return;
             } else {
                 if (fetched > index) {
-                    frame = (SEQFrame) track.getFrame(0);
+                    frame = track.getFrame(0);
                     frame.decode(bitmap, track);
-                    frame = (SEQFrame) track.getFrame(1);
+                    frame = track.getFrame(1);
                     frame.decode(bitmap, track);
                     fetched = 1;
                 }
             }
         }
         for (int i = fetched + interleave; i <= index; i += interleave) {
-            frame = (SEQFrame) track.getFrame(i);
+            frame = track.getFrame(i);
             frame.decode(bitmap, track);
         }
     }
@@ -906,12 +906,12 @@ public class SEQPlayer
         fetchFrame(index);
 
         // Convert planar to chunky.
-        SEQFrame frame = (SEQFrame) track.getFrame(index);
+        SEQFrame frame = track.getFrame(index);
         ColorModel cm = frame.getColorModel();
         bitmap.setPlanarColorModel(cm);
         if (prepared == index - interleave && //
                 (bitmap.getPixelType() == BitmapImage.BYTE_PIXEL || //
-                cm == ((SEQFrame) track.getFrame(prepared)).getColorModel())) {
+                cm == track.getFrame(prepared).getColorModel())) {
             bitmap.convertToChunky(
                     frame.getTopBound(track),
                     frame.getLeftBound(track),
@@ -920,8 +920,8 @@ public class SEQPlayer
 
         } else if (isPingPong && prepared == index + interleave &&//
                 (bitmap.getPixelType() == BitmapImage.BYTE_PIXEL || //
-                cm == ((SEQFrame) track.getFrame(prepared)).getColorModel())) {
-            frame = (SEQFrame) track.getFrame(index + interleave);
+                cm == track.getFrame(prepared).getColorModel())) {
+            frame = track.getFrame(index + interleave);
             bitmap.convertToChunky(
                     frame.getTopBound(track),
                     frame.getLeftBound(track),
@@ -936,7 +936,7 @@ public class SEQPlayer
      * Prepare audio data for the specified frame index.
      */
     private void prepareAudio(int index) {
-        SEQFrame frame = (SEQFrame) track.getFrame(index);
+        SEQFrame frame = track.getFrame(index);
         SEQAudioCommand[] audioCommands = frame.getAudioCommands();
         if (audioCommands != null) {
             for (int i = 0; i < audioCommands.length; i++) {
@@ -973,7 +973,7 @@ public class SEQPlayer
         displayFrame = index;
 
         if (debug && visualComponent != null) {
-            SEQFrame frame = (SEQFrame) track.getFrame(index);
+            SEQFrame frame = track.getFrame(index);
             StringBuilder buf = new StringBuilder();
             buf.append("frame:");
             buf.append(index);
@@ -1035,7 +1035,7 @@ public class SEQPlayer
         // Play audio data
         if (isActive()) {
 
-            SEQFrame frame = (SEQFrame) track.getFrame(index);
+            SEQFrame frame = track.getFrame(index);
             SEQAudioCommand[] audioCommands = frame.getAudioCommands();
             if (audioCommands != null) {
                 for (int i = 0; i < audioCommands.length; i++) {

@@ -88,7 +88,7 @@ public class IFFChunk {
         if (propertyChunks == null) {
             return null; }
         IFFChunk chunk = new IFFChunk(type, id);
-        return (IFFChunk)propertyChunks.get(chunk);
+        return propertyChunks.get(chunk);
     }
     public Enumeration propertyChunks() {
         if (propertyChunks == null) {

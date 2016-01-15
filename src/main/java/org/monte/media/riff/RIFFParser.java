@@ -506,11 +506,7 @@ if (DEBUG)System.out.println("RIFFParser.parseLocalChunk "+idToString(id));
      */
     protected boolean isDataChunk(RIFFChunk chunk) {
         if (dataChunks == null) {
-            if (collectionChunks == null && propertyChunks == null && (stopChunkTypes==null||!stopChunkTypes.contains(chunk.getType()))) {
-                return true;
-            } else {
-                return false;
-            }
+            return collectionChunks == null && propertyChunks == null && (stopChunkTypes == null || !stopChunkTypes.contains(chunk.getType()));
         } else {
             return dataChunks.contains(chunk);
         }

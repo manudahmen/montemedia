@@ -88,9 +88,9 @@ public class AVIOutputStreamOLD {
     /**
      * Supported video formats.
      */
-    public static enum AVIVideoFormat {
+    public enum AVIVideoFormat {
 
-        RAW, RLE, JPG, PNG;
+        RAW, RLE, JPG, PNG
     }
     /**
      * Current video formats.
@@ -143,9 +143,9 @@ public class AVIOutputStreamOLD {
     /**
      * The states of the movie output stream.
      */
-    private static enum States {
+    private enum States {
 
-        STARTED, FINISHED, CLOSED;
+        STARTED, FINISHED, CLOSED
     }
     /**
      * The current state of the movie output stream.
@@ -947,7 +947,7 @@ System.out.println("sizeBefore:"+sizeBefore);
             }
             case JPG: {
                 videoFrameChunk = new DataChunk("00dc");
-                ImageWriter iw = (ImageWriter) ImageIO.getImageWritersByMIMEType("image/jpeg").next();
+                ImageWriter iw = ImageIO.getImageWritersByMIMEType("image/jpeg").next();
                 ImageWriteParam iwParam = iw.getDefaultWriteParam();
                 iwParam.setCompressionMode(ImageWriteParam.MODE_EXPLICIT);
                 iwParam.setCompressionQuality(quality);
@@ -961,7 +961,7 @@ System.out.println("sizeBefore:"+sizeBefore);
             case PNG:
             default: {
                 videoFrameChunk = new DataChunk("00dc");
-                ImageWriter iw = (ImageWriter) ImageIO.getImageWritersByMIMEType("image/png").next();
+                ImageWriter iw = ImageIO.getImageWritersByMIMEType("image/png").next();
                 ImageWriteParam iwParam = iw.getDefaultWriteParam();
                 MemoryCacheImageOutputStream imgOut = new MemoryCacheImageOutputStream(videoFrameChunk.getOutputStream());
                 iw.setOutput(imgOut);

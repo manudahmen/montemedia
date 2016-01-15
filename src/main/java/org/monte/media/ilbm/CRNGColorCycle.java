@@ -117,7 +117,7 @@ public class CRNGColorCycle extends ColorCycle {
                     }
                     rgbs[low] =  ((((rgbs[low]&0xff)*blend+(tmp&0xff)*(255-blend))>>8)&0xff)
                                 |((((rgbs[low]&0xff00)*blend+(tmp&0xff00)*(255-blend))>>8)&0xff00)
-                                |((((rgbs[low]&0xff0000)*blend+(tmp&0xff0000)*(255-blend))>>8)&0xff0000);;
+                                |((((rgbs[low]&0xff0000)*blend+(tmp&0xff0000)*(255-blend))>>8)&0xff0000);
                 }
                 if (isEHB) {
                 // TO DO
@@ -132,7 +132,7 @@ public class CRNGColorCycle extends ColorCycle {
                     }
                     rgbs[low] =  ((((rgbs[low]&0xff)*blend+(tmp&0xff)*(255-blend))>>8)&0xff)
                                 |((((rgbs[low]&0xff00)*blend+(tmp&0xff00)*(255-blend))>>8)&0xff00)
-                                |((((rgbs[low]&0xff0000)*blend+(tmp&0xff0000)*(255-blend))>>8)&0xff0000);;
+                                |((((rgbs[low]&0xff0000)*blend+(tmp&0xff0000)*(255-blend))>>8)&0xff0000);
                 }
                 if (isEHB) {
                     // TO DO

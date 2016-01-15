@@ -93,7 +93,7 @@ public class Buffer {
             if (!(into instanceof byte[]) || ((byte[]) into).length < b.length) {
                 into = new byte[b.length];
             }
-            System.arraycopy(b, 0, (byte[])into, 0, b.length);
+            System.arraycopy(b, 0, into, 0, b.length);
         } else if (from instanceof BufferedImage) {
             // FIXME - Try to reuse BufferedImage in output!
             BufferedImage img = (BufferedImage) from;

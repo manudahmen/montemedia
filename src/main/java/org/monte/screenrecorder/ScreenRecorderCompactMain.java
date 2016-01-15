@@ -799,7 +799,7 @@ public class ScreenRecorderCompactMain extends javax.swing.JFrame {
                     HeightKey, outputDimension.height,
                     DepthKey, bitDepth, FrameRateKey, Rational.valueOf(screenRate),
                     QualityKey, quality,
-                    KeyFrameIntervalKey, (int) (screenRate * 60) // one keyframe per minute is enough
+                    KeyFrameIntervalKey, screenRate * 60 // one keyframe per minute is enough
                     ),
                     //
                     // the output format for mouse capture:
@@ -933,8 +933,8 @@ public class ScreenRecorderCompactMain extends javax.swing.JFrame {
                 prefs.putInt("ScreenRecorder.customAreaY", customAreaRect.y);
                 prefs.putInt("ScreenRecorder.customAreaWidth", customAreaRect.width);
                 prefs.putInt("ScreenRecorder.customAreaHeight", customAreaRect.height);
-                ((JComponent) getContentPane()).invalidate();
-                ((JComponent) getContentPane()).revalidate();
+                getContentPane().invalidate();
+                getContentPane().revalidate();
             }
         });
         setVisible(false);

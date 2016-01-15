@@ -26,18 +26,18 @@ public interface RIFFVisitor {
      * @param group
      * @return True to enter the group, false to skip over the group.
      */
-    public boolean enteringGroup(RIFFChunk group);
+    boolean enteringGroup(RIFFChunk group);
     
     /** This method is invoked when the parser enters a group chunk.*/
-    public void enterGroup(RIFFChunk group)
+    void enterGroup(RIFFChunk group)
     throws ParseException, AbortException;
     
     /** This method is invoked when the parser leaves a group chunk.*/
-    public void leaveGroup(RIFFChunk group)
+    void leaveGroup(RIFFChunk group)
     throws ParseException, AbortException;
     
     /** This method is invoked when the parser has read a data chunk or
      * has skipped a stop chunk.*/
-    public void visitChunk(RIFFChunk group, RIFFChunk chunk)
+    void visitChunk(RIFFChunk group, RIFFChunk chunk)
     throws ParseException, AbortException;
 }

@@ -25,8 +25,6 @@ public class LinearEquations {
     private LinearEquations() {
     }
 
-    ;
-    
     /** Solves a linear system for x,y with cramer's rule.
      * 
      * <pre>

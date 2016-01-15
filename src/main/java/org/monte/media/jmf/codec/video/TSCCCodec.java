@@ -187,10 +187,10 @@ public class TSCCCodec extends AbstractVideoDecoder {
             tmp = new SeekableByteArrayOutputStream();
         }
 
-        VideoFormat outvf = (VideoFormat) outputFormat;
+        VideoFormat outvf = outputFormat;
         boolean isKeyframe = isSet(in, Buffer.FLAG_KEY_FRAME) || frameCounter % (int) outvf.getFrameRate() == 0;
         frameCounter++;
-        VideoFormat invf = (VideoFormat) inputFormat;
+        VideoFormat invf = inputFormat;
         int width = invf.getSize().width;
         int height = invf.getSize().height;
         int scanlineStride;
@@ -243,7 +243,7 @@ public class TSCCCodec extends AbstractVideoDecoder {
                     if (previousPixels == null) {
                         previousPixels = pixels.clone();
                     } else {
-                        System.arraycopy(pixels, 0, (byte[]) previousPixels, 0, pixels.length);
+                        System.arraycopy(pixels, 0, previousPixels, 0, pixels.length);
                     }
                     break;
                 }
@@ -263,7 +263,7 @@ public class TSCCCodec extends AbstractVideoDecoder {
                     if (previousPixels == null) {
                         previousPixels = pixels.clone();
                     } else {
-                        System.arraycopy(pixels, 0, (short[]) previousPixels, 0, pixels.length);
+                        System.arraycopy(pixels, 0, previousPixels, 0, pixels.length);
                     }
                     break;
                 }
@@ -284,7 +284,7 @@ public class TSCCCodec extends AbstractVideoDecoder {
                     if (previousPixels == null) {
                         previousPixels = pixels.clone();
                     } else {
-                        System.arraycopy(pixels, 0, (int[]) previousPixels, 0, pixels.length);
+                        System.arraycopy(pixels, 0, previousPixels, 0, pixels.length);
                     }
                     break;
                 }
@@ -297,7 +297,7 @@ public class TSCCCodec extends AbstractVideoDecoder {
             out.setFormat(outputFormat);
             out.setData(tmp.getBuffer());
             out.setOffset(0);
-            out.setLength((int) tmp.size());
+            out.setLength(tmp.size());
             return BUFFER_PROCESSED_OK;
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -316,9 +316,9 @@ public class TSCCCodec extends AbstractVideoDecoder {
         out.setFormat(outputFormat);
 
         // The following could be done in the open() method
-        VideoFormat invf = (VideoFormat) inputFormat;
+        VideoFormat invf = inputFormat;
         boolean isKeyframe;
-        VideoFormat ooutvf = (VideoFormat) outputFormat;
+        VideoFormat ooutvf = outputFormat;
         int width = invf.getSize().width;
         int height = invf.getSize().height;
         int scanlineStride;
@@ -340,7 +340,7 @@ public class TSCCCodec extends AbstractVideoDecoder {
             scanlineStride = width;
             pixelStride = 1;
         } else if (invf instanceof VideoFormat) {
-            VideoFormat vf=(VideoFormat)invf;
+            VideoFormat vf= invf;
             inputDepth = 24;
             scanlineStride=pixelStride=vf.getSize().width*3;
         } else {

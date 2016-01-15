@@ -142,8 +142,8 @@ public class DataAtomOutputStream extends FilterOutputStream {
      * @throws java.io.IOException
      */
     public void writeShort(int v) throws IOException {
-        out.write((int) ((v >> 8) & 0xff));
-        out.write((int) ((v >>> 0) & 0xff));
+        out.write((v >> 8) & 0xff);
+        out.write((v >>> 0) & 0xff);
         incCount(2);
     }
 
@@ -308,8 +308,8 @@ public class DataAtomOutputStream extends FilterOutputStream {
     }
 
     public void writeUShort(int v) throws IOException {
-        out.write((int) ((v >> 8) & 0xff));
-        out.write((int) ((v >>> 0) & 0xff));
+        out.write((v >> 8) & 0xff);
+        out.write((v >>> 0) & 0xff);
         incCount(2);
     }
 

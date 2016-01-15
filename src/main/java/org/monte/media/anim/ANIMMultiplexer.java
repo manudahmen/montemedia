@@ -58,7 +58,7 @@ public class ANIMMultiplexer extends ANIMOutputStream implements Multiplexer {
             outputTime.add(new Rational(outputMediaDuration,jiffies));
            // System.out.println("ANIMMultiplexer #" + frameCount + " jiffies:"+jiffies+" movieT:" + outputTime + " inputT:" + inputTime+" diff:"+(outputTime.subtract(inputTime))+ " sampleDuration:" + outputMediaDuration + " == " + outputDuration+" ~= "+buf.sampleDuration);
 
-            writeFrame((BitmapImage) buf.data, (int) outputMediaDuration);
+            writeFrame((BitmapImage) buf.data, outputMediaDuration);
         }
     }
 }

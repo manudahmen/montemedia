@@ -147,8 +147,8 @@ public class DataChunkOutputStream extends FilterOutputStream {
      * @throws java.io.IOException
      */
     public void writeShort(int v) throws IOException {
-        out.write((int) ((v >>> 0) & 0xff));
-        out.write((int) ((v >> 8) & 0xff));
+        out.write((v >>> 0) & 0xff);
+        out.write((v >> 8) & 0xff);
         incCount(2);
     }
 
@@ -160,8 +160,8 @@ public class DataChunkOutputStream extends FilterOutputStream {
      */
     public void writeShorts(short[] v, int off, int len) throws IOException {
         for (int i = off; i < off + len; i++) {
-            out.write((int) ((v[i] >>> 0) & 0xff));
-            out.write((int) ((v[i] >> 8) & 0xff));
+            out.write((v[i] >>> 0) & 0xff);
+            out.write((v[i] >> 8) & 0xff);
         }
         incCount(len * 2);
     }
@@ -174,9 +174,9 @@ public class DataChunkOutputStream extends FilterOutputStream {
      */
     public void writeInts24(int[] v, int off, int len) throws IOException {
         for (int i = off; i < off + len; i++) {
-            out.write((int) ((v[i] >>> 0) & 0xff));
-            out.write((int) ((v[i] >> 8) & 0xff));
-            out.write((int) ((v[i] >> 16) & 0xff));
+            out.write((v[i] >>> 0) & 0xff);
+            out.write((v[i] >> 8) & 0xff);
+            out.write((v[i] >> 16) & 0xff);
         }
         incCount(len * 3);
     }
@@ -193,8 +193,8 @@ public class DataChunkOutputStream extends FilterOutputStream {
     }
 
     public void writeUShort(int v) throws IOException {
-        out.write((int) ((v >>> 0) & 0xff));
-        out.write((int) ((v >> 8) & 0xff));
+        out.write((v >>> 0) & 0xff);
+        out.write((v >> 8) & 0xff);
         incCount(2);
     }
 

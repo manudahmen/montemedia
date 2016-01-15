@@ -109,7 +109,7 @@ public enum IFDDataType {
         }
     }
 
-    private IFDDataType(int typeNumber) {
+    IFDDataType(int typeNumber) {
         this.typeNumber = typeNumber;
     }
 

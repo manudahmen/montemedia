@@ -24,11 +24,11 @@ import java.io.IOException;
  */
 public interface Track {
     /** Returns the numbers of samples in this track. */
-    public long getSampleCount();
+    long getSampleCount();
 /** Sets the read position. */
-    public void setPosition(long pos);
+void setPosition(long pos);
     /** Gets the read position. */
-    public long getPosition();
+    long getPosition();
 
     /** Reads a sample from the input stream.
      * If the end of the track is reached, the discard-flag in the buffer is set
@@ -36,5 +36,5 @@ public interface Track {
      *
      * @param buf The buffer for the sample.
      */
-    public void read(Buffer buf) throws IOException;
+    void read(Buffer buf) throws IOException;
 }

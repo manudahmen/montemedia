@@ -462,7 +462,7 @@ public class StreamPosTokenizer
         // rlw
         int data;
         if (unread.size() > 0) {
-            data = ((Integer) unread.lastElement()).intValue();
+            data = unread.lastElement().intValue();
             unread.removeElementAt(unread.size() - 1);
         } else {
             data = reader.read();

@@ -181,7 +181,7 @@ public class AmigaVideoFormatKeys extends VideoFormatKeys {
 
     private interface InfGetter<T> {
 
-        public T get(AmigaDisplayInfo inf);
+        T get(AmigaDisplayInfo inf);
     }
 
     private static void reduceListRational(Rational value, InfGetter<Rational> g, ArrayList<AmigaDisplayInfo> infs) {

@@ -21,50 +21,50 @@ import java.beans.PropertyChangeListener;
 public interface ColorAdjustModel {
     /** Level adjustment: white point in the range [0,1]. 
      */
-    public final static String WHITE_POINT_PROPERTY = "whitePoint";
+    String WHITE_POINT_PROPERTY = "whitePoint";
     /** Level adjustment: black point in the range [0,1]. 
      */
-    public final static String BLACK_POINT_PROPERTY = "blackPoint";
+    String BLACK_POINT_PROPERTY = "blackPoint";
     /** Level adjustment: mid point in the range [0,1]. 
      */
-    public final static String MID_POINT_PROPERTY = "midPoint";
+    String MID_POINT_PROPERTY = "midPoint";
     
     /** Exposure adjustment in the range [-1,1].
      */
-    public final static String EXPOSURE_PROPERTY = "exposure";
+    String EXPOSURE_PROPERTY = "exposure";
     /** Brightness adjustment in the range [-1,1].
      */
-    public final static String BRIGHTNESS_PROPERTY = "brightness";
+    String BRIGHTNESS_PROPERTY = "brightness";
     /** Contrast adjustment in the range [-1,1].
      */
-    public final static String CONTRAST_PROPERTY = "contrast";
+    String CONTRAST_PROPERTY = "contrast";
     /** Saturation adjustment in the range [0,1].
      */
-    public final static String SATURATION_PROPERTY = "saturation";
+    String SATURATION_PROPERTY = "saturation";
     
     /** Definition adjustment in the range [0,1].
      */
-    public final static String DEFINITION_PROPERTY = "definition";
+    String DEFINITION_PROPERTY = "definition";
     /** Higlights adjustment in the range [0,1].
      */
-    public final static String HIGHLIGHTS_PROPERTY = "highlights";
+    String HIGHLIGHTS_PROPERTY = "highlights";
     /** Shadows adjustment in the range [0,1].
      */
-    public final static String SHADOWS_PROPERTY = "shadows";
+    String SHADOWS_PROPERTY = "shadows";
     
     /** Sharpness adjustment in the range [0,1].
      */
-    public final static String SHARPNESS_PROPERTY = "sharpness";
+    String SHARPNESS_PROPERTY = "sharpness";
     /** De-noise adjustment in the range [0,1].
      */
-    public final static String DENOISE_PROPERTY = "denoise";
+    String DENOISE_PROPERTY = "denoise";
     
     /** Temperature adjustment in the range [-1,1].
      */
-    public final static String TEMPERATURE_PROPERTY = "temperature";
+    String TEMPERATURE_PROPERTY = "temperature";
     /** Tint adjustment in the range [-1,1].
      */
-    public final static String TINT_PROPERTY = "tint";
+    String TINT_PROPERTY = "tint";
     
     /** A 4-vector with the parameters for quadratic white balance adjustment.
      * The vector contains the values {Rmu, Rnu, Bmu, Bnu}.
@@ -86,82 +86,82 @@ public interface ColorAdjustModel {
      * pp.134–139.
      * 
      */
-    public final static String WHITE_BALANCE_QM_PROPERTY = "whiteBalanceQM";
-    public final static String WHITE_BALANCE_QM_ENABLED_PROPERTY = "whiteBalanceQMEnabled";
-    public final static String WHITE_BALANCE_TT_ENABLED_PROPERTY = "whiteBalanceTTEnabled";
+    String WHITE_BALANCE_QM_PROPERTY = "whiteBalanceQM";
+    String WHITE_BALANCE_QM_ENABLED_PROPERTY = "whiteBalanceQMEnabled";
+    String WHITE_BALANCE_TT_ENABLED_PROPERTY = "whiteBalanceTTEnabled";
 
-    public float getWhitePoint();
+    float getWhitePoint();
 
-    public void setWhitePoint(float newValue);
+    void setWhitePoint(float newValue);
 
-    public float getBlackPoint();
+    float getBlackPoint();
 
-    public void setBlackPoint(float newValue);
+    void setBlackPoint(float newValue);
 
-    public float getMidPoint();
+    float getMidPoint();
 
-    public void setMidPoint(float newValue);
+    void setMidPoint(float newValue);
 
-    public float getContrast();
+    float getContrast();
 
-    public void setContrast(float newValue);
+    void setContrast(float newValue);
 
-    public float getDefinition();
+    float getDefinition();
 
-    public void setDefinition(float newValue);
+    void setDefinition(float newValue);
 
-    public float getDenoise();
+    float getDenoise();
 
-    public void setDenoise(float newValue);
+    void setDenoise(float newValue);
 
-    public float getBrightness();
+    float getBrightness();
 
-    public void setBrightness(float newValue);
+    void setBrightness(float newValue);
     
-    public float getExposure();
+    float getExposure();
 
-    public void setExposure(float newValue);
+    void setExposure(float newValue);
 
-    public float getHighlights();
+    float getHighlights();
 
-    public void setHighlights(float newValue);
+    void setHighlights(float newValue);
 
-    public float getSaturation();
+    float getSaturation();
 
-    public void setSaturation(float newValue);
+    void setSaturation(float newValue);
 
-    public float getShadows();
+    float getShadows();
 
-    public void setShadows(float newValue);
+    void setShadows(float newValue);
 
-    public float getSharpness();
+    float getSharpness();
 
-    public void setSharpness(float newValue);
+    void setSharpness(float newValue);
 
-    public float getTemperature();
+    float getTemperature();
 
-    public void setTemperature(float newValue);
+    void setTemperature(float newValue);
 
-    public float getTint();
+    float getTint();
 
-    public void setTint(float newValue);
+    void setTint(float newValue);
     
-    public void setWhiteBalanceTTEnabled(boolean newValue);
-    public boolean isWhiteBalanceTTEnabled();
-    public void setWhiteBalanceQMEnabled(boolean newValue);
-    public boolean isWhiteBalanceQMEnabled();
-    public void setWhiteBalanceQM(float[] newValue);
-    public float[] getWhiteBalanceQM();
+    void setWhiteBalanceTTEnabled(boolean newValue);
+    boolean isWhiteBalanceTTEnabled();
+    void setWhiteBalanceQMEnabled(boolean newValue);
+    boolean isWhiteBalanceQMEnabled();
+    void setWhiteBalanceQM(float[] newValue);
+    float[] getWhiteBalanceQM();
     
-    public void addPropertyChangeListener(PropertyChangeListener listener);
+    void addPropertyChangeListener(PropertyChangeListener listener);
 
-    public void removePropertyChangeListener(PropertyChangeListener listener);
+    void removePropertyChangeListener(PropertyChangeListener listener);
 
     /** Resets all values. */
-    public void reset();
+    void reset();
     
-    public void setTo(ColorAdjustModel that);
+    void setTo(ColorAdjustModel that);
     
     /** Returns true, if the model does not perform any changes to the image. */
-    public boolean isIdentity();
+    boolean isIdentity();
 }

@@ -72,7 +72,7 @@ public class JDK13ShortAudioClip implements LoopableAudioClip {
         if (clip == null) {
             try {
                 clip = createClip();
-                clip.open(getAudioFormat(), (byte[]) samples.clone(), 0, samples.length);
+                clip.open(getAudioFormat(), samples.clone(), 0, samples.length);
                 if (clip.isControlSupported(FloatControl.Type.PAN)) {
                     FloatControl control = (FloatControl) clip.getControl(FloatControl.Type.PAN);
                     control.setValue(pan);
@@ -151,7 +151,7 @@ public class JDK13ShortAudioClip implements LoopableAudioClip {
         stop();
         try {
             clip = createClip();
-            clip.open(getAudioFormat(), (byte[]) samples.clone(), 0, samples.length);
+            clip.open(getAudioFormat(), samples.clone(), 0, samples.length);
             if (clip.isControlSupported(FloatControl.Type.PAN)) {
                 FloatControl control = (FloatControl) clip.getControl(FloatControl.Type.PAN);
                 control.setValue(pan);

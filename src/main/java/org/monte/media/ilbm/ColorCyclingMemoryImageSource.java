@@ -75,7 +75,7 @@ public class ColorCyclingMemoryImageSource extends MemoryImageSource {
     public ColorCyclingMemoryImageSource(int w, int h, ColorModel cm,
             byte[] pix, int off, int scan) {
         super(w, h, cm, pix, off, scan);
-        initialize(w, h, cm, (Object) pix, off, scan, new Hashtable());
+        initialize(w, h, cm, pix, off, scan, new Hashtable());
     }
 
     /**
@@ -97,7 +97,7 @@ public class ColorCyclingMemoryImageSource extends MemoryImageSource {
             byte[] pix, int off, int scan,
             Hashtable<?, ?> props) {
         super(w, h, cm, pix, off, scan, props);
-        initialize(w, h, cm, (Object) pix, off, scan, props);
+        initialize(w, h, cm, pix, off, scan, props);
     }
 
     /**
@@ -116,7 +116,7 @@ public class ColorCyclingMemoryImageSource extends MemoryImageSource {
     public ColorCyclingMemoryImageSource(int w, int h, ColorModel cm,
             int[] pix, int off, int scan) {
         super(w, h, cm, pix, off, scan);
-        initialize(w, h, cm, (Object) pix, off, scan, null);
+        initialize(w, h, cm, pix, off, scan, null);
     }
 
     /**
@@ -138,7 +138,7 @@ public class ColorCyclingMemoryImageSource extends MemoryImageSource {
             int[] pix, int off, int scan,
             Hashtable<?, ?> props) {
         super(w, h, cm, pix, off, scan, props);
-        initialize(w, h, cm, (Object) pix, off, scan, props);
+        initialize(w, h, cm, pix, off, scan, props);
     }
 
     private void initialize(int w, int h, ColorModel cm,

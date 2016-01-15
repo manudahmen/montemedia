@@ -405,8 +405,6 @@ public class ANIMMovieTrack {
         return ((ANIMFrame) frames_.elementAt(lastFrame)).getOperation();
     }
 
-    ;
-
     public void addFrame(ANIMFrame frame) {
         int oldValue;
         synchronized (this) {

@@ -37,7 +37,8 @@ public class TIFFOutputStream extends OutputStream {
     private enum State {
 
         INITIALIZED, STARTED, FINISHED
-    };
+    }
+
     private State state = State.INITIALIZED;
     private long firstIFDOffset = 8;
 

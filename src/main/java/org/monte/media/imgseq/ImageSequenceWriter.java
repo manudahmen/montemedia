@@ -185,7 +185,7 @@ public class ImageSequenceWriter implements MovieWriter {
 
         FileOutputStream out = new FileOutputStream(file);
         try {
-            out.write((byte[]) data, off, len);
+            out.write(data, off, len);
         } finally {
             out.close();
         }

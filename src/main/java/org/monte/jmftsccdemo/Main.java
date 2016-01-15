@@ -107,7 +107,7 @@ private void generatePerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:even
         final JProgressBar pb = new JProgressBar();
         pb.setIndeterminate(true);
         getContentPane().add(pb, BorderLayout.SOUTH);
-        ((JComponent) getContentPane()).revalidate();
+        getContentPane().revalidate();
         SwingWorker w = new SwingWorker() {
 
             @Override
@@ -120,7 +120,7 @@ private void generatePerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:even
             protected void done() {
                 pb.setIndeterminate(false);
                 getContentPane().remove(pb);
-                ((JComponent) getContentPane()).revalidate();
+                getContentPane().revalidate();
                 getContentPane().repaint();
             }
             
@@ -164,7 +164,7 @@ private void openPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_op
         } catch (Exception ex) {
             JLabel label = new JLabel(ex.toString());
             add(label, BorderLayout.CENTER);
-            ((JComponent) getContentPane()).revalidate();
+            getContentPane().revalidate();
             getContentPane().repaint();
             ex.printStackTrace();
         }

@@ -252,7 +252,7 @@ public class TechSmithCodec extends AbstractVideoCodec {
                 IndexColorModel icm = new IndexColorModel(8, 256, cmap, 0, false, -1, DataBuffer.TYPE_BYTE);
                 img.setColorModel(icm);
                 byte[] pixels = ((DataBufferByte) img.getRaster().getDataBuffer()).getData();
-                System.arraycopy((byte[]) newPixels, 0, pixels, 0, width * height);
+                System.arraycopy(newPixels, 0, pixels, 0, width * height);
             }
             break;
             case 15: {
@@ -265,7 +265,7 @@ public class TechSmithCodec extends AbstractVideoCodec {
                     img = new MyBufferedImage(oldImg.getColorModel(), oldImg.getRaster(), oldImg.isAlphaPremultiplied(), null);
                 }
                 short[] pixels = ((DataBufferUShort) img.getRaster().getDataBuffer()).getData();
-                System.arraycopy((short[]) newPixels, 0, pixels, 0, width * height);
+                System.arraycopy(newPixels, 0, pixels, 0, width * height);
             }
             break;
             case 16: {
@@ -284,7 +284,7 @@ public class TechSmithCodec extends AbstractVideoCodec {
                  System.arraycopy((short[]) newPixels, 0, pixels, 0, width * height);
                  */
                 int[] pixels = ((DataBufferInt) img.getRaster().getDataBuffer()).getData();
-                System.arraycopy((int[]) newPixels, 0, pixels, 0, width * height);
+                System.arraycopy(newPixels, 0, pixels, 0, width * height);
             }
             break;
             case 24: {
@@ -297,7 +297,7 @@ public class TechSmithCodec extends AbstractVideoCodec {
                     img = new MyBufferedImage(oldImg.getColorModel(), oldImg.getRaster(), oldImg.isAlphaPremultiplied(), null);
                 }
                 int[] pixels = ((DataBufferInt) img.getRaster().getDataBuffer()).getData();
-                System.arraycopy((int[]) newPixels, 0, pixels, 0, width * height);
+                System.arraycopy(newPixels, 0, pixels, 0, width * height);
             }
             break;
             default:
@@ -370,7 +370,7 @@ public class TechSmithCodec extends AbstractVideoCodec {
                     if (previousPixels == null) {
                         previousPixels = pixels.clone();
                     } else {
-                        System.arraycopy(pixels, 0, (byte[]) previousPixels, 0, pixels.length);
+                        System.arraycopy(pixels, 0, previousPixels, 0, pixels.length);
                     }
                     break;
                 }
@@ -393,7 +393,7 @@ public class TechSmithCodec extends AbstractVideoCodec {
                     if (previousPixels == null) {
                         previousPixels = pixels.clone();
                     } else {
-                        System.arraycopy(pixels, 0, (short[]) previousPixels, 0, pixels.length);
+                        System.arraycopy(pixels, 0, previousPixels, 0, pixels.length);
                     }
                     break;
                 }
@@ -418,7 +418,7 @@ public class TechSmithCodec extends AbstractVideoCodec {
                     if (previousPixels == null) {
                         previousPixels = pixels.clone();
                     } else {
-                        System.arraycopy(pixels, 0, (int[]) previousPixels, 0, pixels.length);
+                        System.arraycopy(pixels, 0, previousPixels, 0, pixels.length);
                     }
                     break;
                 }

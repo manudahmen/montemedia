@@ -20,8 +20,8 @@ import java.awt.Component;
  * @version 1.0 January 10, 2007 Created.
  */
 public interface MovieControl {
-    public void setPlayer(Player player);
-    public void setVisible(boolean newValue);
-    public Component getComponent();
-    public void setEnabled(boolean b);
+    void setPlayer(Player player);
+    void setVisible(boolean newValue);
+    Component getComponent();
+    void setEnabled(boolean b);
 }

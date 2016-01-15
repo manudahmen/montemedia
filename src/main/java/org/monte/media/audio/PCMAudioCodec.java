@@ -65,8 +65,8 @@ public class PCMAudioCodec extends AbstractAudioCodec {
             return CODEC_OK;
         }
 
-        Format inFormat = (Format) in.format;
-        Format outFormat = (Format) outputFormat;
+        Format inFormat = in.format;
+        Format outFormat = outputFormat;
         if (inFormat.get(SampleRateKey) == null || !inFormat.get(SampleRateKey).equals(outFormat.get(SampleRateKey))) {
             out.setFlag(DISCARD);
             return CODEC_FAILED;
@@ -316,7 +316,7 @@ public class PCMAudioCodec extends AbstractAudioCodec {
                     for (int i = 0; i < count; i++) {
                         // FIXME - For some reason, the Java sound system records
                         //         silence as -128 instead of 0.
-                        buf[i] = (byte) (buf[i] == -128 ? 0 : buf[i]);
+                        buf[i] = buf[i] == -128 ? 0 : buf[i];
                     }
                 }
                 out.write(buf, 0, count);

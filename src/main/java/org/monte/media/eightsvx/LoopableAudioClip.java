@@ -23,7 +23,7 @@ public interface LoopableAudioClip extends AudioClip {
      * Use this as a parameter for method loop(int) to specify
      * a continuous loop.
      */
-    public final static int LOOP_CONTINUOUSLY = -1;
+    int LOOP_CONTINUOUSLY = -1;
     
     /** Starts looping playback from the current position.   Playback will
      * continue to the loop's end point, then loop back to the loop start point
@@ -48,6 +48,6 @@ public interface LoopableAudioClip extends AudioClip {
      * <code>{@link #LOOP_CONTINUOUSLY}</code> to indicate that looping should
      * continue until interrupted
      */
-    public void loop(int count);
+    void loop(int count);
     
 }

@@ -130,7 +130,7 @@ public abstract class AbstractAVIStream {
     /**
      * Supported media types.
      */
-    public static enum AVIMediaType {
+    public enum AVIMediaType {
 
         AUDIO("auds"),//
         MIDI("mids"),//

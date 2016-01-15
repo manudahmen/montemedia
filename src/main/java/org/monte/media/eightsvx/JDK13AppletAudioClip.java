@@ -145,7 +145,7 @@ public class JDK13AppletAudioClip implements LoopableAudioClip, Runnable {
      */
     private static Mixer getMixer() throws LineUnavailableException {
         if (mixer == null) {
-            mixer = (Mixer) AudioSystem.getMixer(AudioSystem.getMixerInfo()[0]);
+            mixer = AudioSystem.getMixer(AudioSystem.getMixerInfo()[0]);
             SourceDataLine[] l = new SourceDataLine[16];
             for (int i=0; i < 16; i++) {
                 l[i] = aquireLine();

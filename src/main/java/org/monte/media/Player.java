@@ -33,7 +33,7 @@ extends StateModel {
    * does not yet know anything about its media. When a media Player
    * is first created, its unrealized.
    */
-  public final static int UNREALIZED = 0;
+  int UNREALIZED = 0;
   /**
    * When realize is called, a Player moves from the UNREALIZED state
    * into the REALIZING state. A realizing player is in the process
@@ -45,7 +45,7 @@ extends StateModel {
    * at a time; such resources are qcquired during PREFETCHING.) A
    * realizing Player often downlaods assets over the net.
    */
-  public final static int REALIZING = 1;
+  int REALIZING = 1;
   /**
    * When a Player finishes realizing it moves into the REALIZED state.
    * A realized Player knows what resoures it needs and information about
@@ -55,7 +55,7 @@ extends StateModel {
    * does noct own any resources that would prevent another Player from
    * starting.
    */
-  public final static int REALIZED = 2;
+  int REALIZED = 2;
   /**
    * When prefetch is called, a Player moves from the Realized state into
    * the Prefetching state. A Prefetching Player is preparing to present its
@@ -66,52 +66,52 @@ extends StateModel {
    * requires that additional buffers be acquired or alternate processing
    * take place.
    */
-  public final static int PREFETCHING = 3;
+  int PREFETCHING = 3;
   /**
    * When a Player finishes Prefetching, it moves into the Prefetched state. A
    * Prefetched Player is ready to be started; it is as ready to play as it can
    * be without actually being Started.
    */
-  public final static int PREFETCHED = 4;
+  int PREFETCHED = 4;
   /**
    * Calling start puts a Player into the Started state. A Started Player's
    * time-base time and media time are mapped and its clock is running,
    * though the Player might be waiting for a particular time to begin
    * presenting its media data.
    */
-  public final static int STARTED = 5;
+  int STARTED = 5;
 
   /**
    * A player with this state has been explicitly closed or has
    * encountered an error and can not be used any more.
    */
-  public final static int CLOSED = -1;
+  int CLOSED = -1;
 
   /**
    * Sets the audio enabled state.
    */
-  public void setAudioEnabled(boolean b);
+  void setAudioEnabled(boolean b);
   /**
    * Returns true if audio is enabled.
    */
-  public boolean isAudioEnabled();
+  boolean isAudioEnabled();
   /**
    * Returns true if audio is available.
    */
-  public boolean isAudioAvailable();
+  boolean isAudioAvailable();
 
   /**
    * Gets the current state of the player.
    */
-  public int getState();
+  int getState();
   /**
    * Gets the target state.
    */
-  public int getTargetState();
+  int getTargetState();
   /**
    * Sets the target state we want the player to be in.
    */
-  public void setTargetState(int state);
+  void setTargetState(int state);
   /**
    * Initiates the following asynchronous
    * state transitions:
@@ -120,7 +120,7 @@ extends StateModel {
    *                              realized
    *   closed -> throws IllegalStateException
    */
-  public void realize();
+  void realize();
   /**
    * Initiates the following asynchronous
    * state transitions:
@@ -131,7 +131,7 @@ extends StateModel {
    *                                                         prefetched
    *   closed -> throws IllegalStateException
    */
-  public void prefetch();
+  void prefetch();
   /**
    * Initiates the following asynchronous
    * state transitions:
@@ -142,7 +142,7 @@ extends StateModel {
    *   started -> throws IllegalStateException
    *   closed -> throws IllegalStateException
    */
-  public void deallocate();
+  void deallocate();
 
   /**
    * Initiates the following asynchronous
@@ -155,7 +155,7 @@ extends StateModel {
    *                                                                     started
    * closed -> throws IllegalStateException
    */
-  public void start();
+  void start();
 
   /**
    * Initiates the following asynchronous
@@ -167,71 +167,71 @@ extends StateModel {
    * prefetched
    * closed -> throws IllegalStateException
    */
-  public void stop();
+  void stop();
 
   /**
    * Initiates the following asynchronous
    * state transitions:
    * any state -> closed
    */
-  public void close();
+  void close();
 
   /**
    * Adds a listener that wants to be notified about
    * state changes of the player.
    */
-  public void addStateListener(StateListener listener);
+  void addStateListener(StateListener listener);
 
   /**
    * Removes a listener.
    */
-  public void removeStateListener(StateListener listener);
+  void removeStateListener(StateListener listener);
 
   /**
    * Adds a listener that wants to be notified about
    * state changes of the player.
    */
-  public void addChangeListener(ChangeListener listener);
+  void addChangeListener(ChangeListener listener);
 
   /**
    * Removes a listener.
    */
-  public void removeChangeListener(ChangeListener listener);
+  void removeChangeListener(ChangeListener listener);
   /**
    * Adds a listener that wants to be notified about
    * property changes of the player.
    */
-  public void addPropertyChangeListener(PropertyChangeListener listener);
+  void addPropertyChangeListener(PropertyChangeListener listener);
 
   /**
    * Removes a listener.
    */
-  public void removePropertyChangeListener(PropertyChangeListener listener);
+  void removePropertyChangeListener(PropertyChangeListener listener);
 
   /**
    * Gets the model representing the time line of the player.
    */
-  public BoundedRangeModel getTimeModel();
+  BoundedRangeModel getTimeModel();
 
   /**
    * Gets the model representing the realizing progress of
    * the player.
    */
-  public BoundedRangeModel getCachingModel();
+  BoundedRangeModel getCachingModel();
     /**
      * Returns true when the player has completely cached all movie data.
      * This player informs all property change listeners, when the value of this
      * property changes. The name of the property is 'cached'.
      */
-    public boolean isCached();
+    boolean isCached();
 
-  public Component getVisualComponent();
-  public Component getControlPanelComponent();
+  Component getVisualComponent();
+  Component getControlPanelComponent();
 
-  public long getTotalDuration();
+  long getTotalDuration();
   
   /**
    * Returns true when the target state of the player is equal to STARTED.
    */
-  public boolean isActive();
+  boolean isActive();
 }

@@ -379,7 +379,7 @@ public class EXIFReader {
 
         TIFFDirectory trackNode = new TIFFDirectory(TrackTagSet.getInstance(), null, track, null, null, new FileSegment(0, data.length));
         root.add(trackNode);
-        ByteArrayImageInputStream in = new ByteArrayImageInputStream(data, 8, (int) data.length - 8, ByteOrder.LITTLE_ENDIAN);
+        ByteArrayImageInputStream in = new ByteArrayImageInputStream(data, 8, data.length - 8, ByteOrder.LITTLE_ENDIAN);
         TIFFInputStream tin = new TIFFInputStream(in, ByteOrder.LITTLE_ENDIAN, 0);
         ArrayList<FileSegment> tiffSeg = new ArrayList<FileSegment>();
         tiffSeg.add(new FileSegment(scan + 8, data.length - 8));

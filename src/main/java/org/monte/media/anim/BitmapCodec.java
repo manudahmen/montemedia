@@ -47,7 +47,7 @@ public class BitmapCodec extends AbstractVideoCodec {
         out.format=outputFormat;
 
         BufferedImage pixmap = (BufferedImage) in.data;
-        Format vf = (Format) outputFormat;
+        Format vf = outputFormat;
         BitmapImage bitmap = out.data instanceof BitmapImage ? (BitmapImage) out.data : null;
         if (bitmap == null || bitmap.getWidth() != vf.get(WidthKey)
                 || bitmap.getHeight() != vf.get(HeightKey) || bitmap.getDepth() != vf.get(DepthKey)) {

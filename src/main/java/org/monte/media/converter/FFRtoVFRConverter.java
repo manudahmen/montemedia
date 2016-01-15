@@ -90,7 +90,7 @@ public class FFRtoVFRConverter extends AbstractVideoCodec {
     @Override
     public int process(Buffer in, Buffer out) {
         out.setMetaTo(in);
-        Format vf = (Format) inputFormat;
+        Format vf = inputFormat;
 
         if (!in.isFlag(KEYFRAME)) {
             // This codec can only process keyframes.

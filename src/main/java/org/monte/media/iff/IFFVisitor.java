@@ -21,12 +21,12 @@ a data chunk and when a group is entered or leaved.
 */
 public interface IFFVisitor
   {
-  public void enterGroup(IFFChunk group)
+  void enterGroup(IFFChunk group)
   throws ParseException, AbortException;
 
-  public void leaveGroup(IFFChunk group)
+  void leaveGroup(IFFChunk group)
   throws ParseException, AbortException;
 
-  public void visitChunk(IFFChunk group, IFFChunk chunk)
+  void visitChunk(IFFChunk group, IFFChunk chunk)
   throws ParseException, AbortException;
   }

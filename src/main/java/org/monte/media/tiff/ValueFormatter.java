@@ -23,9 +23,9 @@ public interface ValueFormatter {
      * which can be handled easier. For example, an integer value by a descriptive
      * String.
      */
-    public Object format(Object value);
+    Object format(Object value);
     /** Formats the specified value in a human readable format. */
-    public Object prettyFormat(Object value);
+    Object prettyFormat(Object value);
     /** Describes the data. Returns null if no description is available. */
-    public String descriptionFormat(Object data);
+    String descriptionFormat(Object data);
 }

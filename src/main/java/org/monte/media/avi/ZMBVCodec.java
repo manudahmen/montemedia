@@ -107,7 +107,7 @@ public class ZMBVCodec extends AbstractVideoCodec {
                 IndexColorModel icm = new IndexColorModel(8, 256, cmap, 0, false, -1, DataBuffer.TYPE_BYTE);
                 img.setColorModel(icm);
                 byte[] pixels = ((DataBufferByte) img.getRaster().getDataBuffer()).getData();
-                System.arraycopy((byte[]) newPixels, 0, pixels, 0, width * height);
+                System.arraycopy(newPixels, 0, pixels, 0, width * height);
             }
             break;
             case 15: {
@@ -120,7 +120,7 @@ public class ZMBVCodec extends AbstractVideoCodec {
                     img = new MyBufferedImage(oldImg.getColorModel(), oldImg.getRaster(), oldImg.isAlphaPremultiplied(), null);
                 }
                 short[] pixels = ((DataBufferUShort) img.getRaster().getDataBuffer()).getData();
-                System.arraycopy((short[]) newPixels, 0, pixels, 0, width * height);
+                System.arraycopy(newPixels, 0, pixels, 0, width * height);
             }
             break;
             case 16: {
@@ -133,7 +133,7 @@ public class ZMBVCodec extends AbstractVideoCodec {
                     img = new MyBufferedImage(oldImg.getColorModel(), oldImg.getRaster(), oldImg.isAlphaPremultiplied(), null);
                 }
                 short[] pixels = ((DataBufferUShort) img.getRaster().getDataBuffer()).getData();
-                System.arraycopy((short[]) newPixels, 0, pixels, 0, width * height);
+                System.arraycopy(newPixels, 0, pixels, 0, width * height);
             }
             break;
             case 32:

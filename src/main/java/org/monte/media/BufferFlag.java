@@ -38,5 +38,5 @@ public enum BufferFlag {
     /** Indicates that this buffer is known to have the same data as the
      * previous buffer. This may improve encoding performance. 
      */
-    SAME_DATA;
+    SAME_DATA
 }

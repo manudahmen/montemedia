@@ -22,47 +22,47 @@ import java.beans.PropertyChangeListener;
  */
 public interface Movie {
 
-    public final static String PLAYHEAD_PROPERTY = "playhead";
-    public final static String IN_PROPERTY = "in";
-    public final static String OUT_PROPERTY = "out";
+    String PLAYHEAD_PROPERTY = "playhead";
+    String IN_PROPERTY = "in";
+    String OUT_PROPERTY = "out";
 
     /** Returns the total duration of the movie in seconds. */
-    public Rational getDuration();
+    Rational getDuration();
 
     /** Sets the position of the insertion point in seconds. */
-    public void setInsertionPoint(Rational seconds);
+    void setInsertionPoint(Rational seconds);
 
     /** Returns the position of the insertion point in seconds.
      * If a movie has a duration of n, then there are n+1 insertion points.
      */
-    public Rational getInsertionPoint();
+    Rational getInsertionPoint();
 
     /** Returns the position of the in point in seconds. */
-    public Rational getSelectionStart();
+    Rational getSelectionStart();
 
     /** Sets the position of the in point in seconds. */
-    public void setSelectionStart(Rational in);
+    void setSelectionStart(Rational in);
 
     /** Returns the position of the out point in seconds. */
-    public Rational getSelectionEnd();
+    Rational getSelectionEnd();
 
     /** Sets the position of the out point in seconds. */
-    public void setSelectionEnd(Rational out);
+    void setSelectionEnd(Rational out);
 
     /** Returns the frame number for the specified time in seconds. */
-    public long timeToSample(int track, Rational seconds);
+    long timeToSample(int track, Rational seconds);
 
-    public void addPropertyChangeListener(PropertyChangeListener listener);
+    void addPropertyChangeListener(PropertyChangeListener listener);
 
-    public void removePropertyChangeListener(PropertyChangeListener listener);
+    void removePropertyChangeListener(PropertyChangeListener listener);
 
-    public Rational sampleToTime(int track, long sample);
+    Rational sampleToTime(int track, long sample);
 
-    public int getTrackCount();
+    int getTrackCount();
 
-    public Format getFormat(int track);
+    Format getFormat(int track);
 
-    public Format getFileFormat();
+    Format getFileFormat();
 
-    public MovieReader getReader();
+    MovieReader getReader();
 }

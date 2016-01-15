@@ -52,7 +52,7 @@ public class CompositeTransferable implements java.awt.datatransfer.Transferable
      */
     @Override
     public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
-        Transferable t = (Transferable) transferables.get(flavor);
+        Transferable t = transferables.get(flavor);
         if (t == null) {
             throw new UnsupportedFlavorException(flavor);
         }
@@ -67,7 +67,7 @@ public class CompositeTransferable implements java.awt.datatransfer.Transferable
      */
     @Override
     public DataFlavor[] getTransferDataFlavors() {
-        return (DataFlavor[]) flavors.toArray(new DataFlavor[transferables.size()]);
+        return flavors.toArray(new DataFlavor[transferables.size()]);
     }
     
     /**

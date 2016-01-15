@@ -21,15 +21,15 @@ public interface StateModel {
    * Adds a listener that wants to be notified about
    * state changes of the model.
    */
-  public void addStateListener(StateListener listener);
+  void addStateListener(StateListener listener);
 
   /**
    * Removes a listener.
    */
-  public void removeStateListener(StateListener listener);
+  void removeStateListener(StateListener listener);
   
   /**
    * Returns the current state of the model.
    */
-  public int getState();
+  int getState();
 }

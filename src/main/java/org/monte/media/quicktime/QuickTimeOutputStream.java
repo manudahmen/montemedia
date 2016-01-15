@@ -802,7 +802,7 @@ public class QuickTimeOutputStream extends AbstractQuickTimeStream {
                 maxMediaDuration = max(t.mediaDuration, maxMediaDuration);
             }
 
-            return getRelativeStreamPosition() > (long) (1L << 61) //
+            return getRelativeStreamPosition() > 1L << 61 //
                     || maxMediaDuration > 1L << 61;
         } catch (IOException ex) {
             return true;

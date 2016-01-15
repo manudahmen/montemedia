@@ -444,7 +444,7 @@ public class ScreenRecorderMain extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {audioRateChoice, colorsChoice, cursorChoice, formatChoice});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, audioRateChoice, colorsChoice, cursorChoice, formatChoice);
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -772,8 +772,8 @@ public class ScreenRecorderMain extends javax.swing.JFrame {
                 c.setEnabled(b);
             }
         }
-        ((JComponent) getContentPane()).invalidate();
-        ((JComponent) getContentPane()).revalidate();
+        getContentPane().invalidate();
+        getContentPane().revalidate();
     }
 
     private void stop() {
@@ -892,8 +892,8 @@ public class ScreenRecorderMain extends javax.swing.JFrame {
                 prefs.putInt("ScreenRecording.customAreaY", ai.location.y);
                 prefs.putInt("ScreenRecording.customAreaWidth", ai.inputDimension.width);
                 prefs.putInt("ScreenRecording.customAreaHeight", ai.inputDimension.height);
-                ((JComponent) getContentPane()).invalidate();
-                ((JComponent) getContentPane()).revalidate();
+                getContentPane().invalidate();
+                getContentPane().revalidate();
             }
         });
         setVisible(false);

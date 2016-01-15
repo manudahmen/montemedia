@@ -878,12 +878,12 @@ public class ANIMPlayer
             bitmap = bitmapEven;
             fetchedEven = index;
             if (fetched == index + interleave && track.getFrame(fetched).isBidirectional()) {
-                frame = (ANIMFrame) track.getFrame(fetched);
+                frame = track.getFrame(fetched);
                 frame.decode(bitmap, track);
                 return;
             } else {
                 if (fetched > index) {
-                    frame = (ANIMFrame) track.getFrame(0);
+                    frame = track.getFrame(0);
                     frame.decode(bitmap, track);
                     fetched = 0;
                 }
@@ -897,21 +897,21 @@ public class ANIMPlayer
             bitmap = bitmapOdd;
             fetchedOdd = index;
             if (fetched == index + interleave && track.getFrame(fetched).isBidirectional()) {
-                frame = (ANIMFrame) track.getFrame(fetched);
+                frame = track.getFrame(fetched);
                 frame.decode(bitmap, track);
                 return;
             } else {
                 if (fetched > index) {
-                    frame = (ANIMFrame) track.getFrame(0);
+                    frame = track.getFrame(0);
                     frame.decode(bitmap, track);
-                    frame = (ANIMFrame) track.getFrame(1);
+                    frame = track.getFrame(1);
                     frame.decode(bitmap, track);
                     fetched = 1;
                 }
             }
         }
         for (int i = fetched + interleave; i <= index; i += interleave) {
-            frame = (ANIMFrame) track.getFrame(i);
+            frame = track.getFrame(i);
             frame.decode(bitmap, track);
         }
     }
@@ -947,12 +947,12 @@ public class ANIMPlayer
         fetchFrame(index);
 
         // Convert planar to chunky.
-        ANIMFrame frame = (ANIMFrame) track.getFrame(index);
+        ANIMFrame frame = track.getFrame(index);
         ColorModel cm = frame.getColorModel();
         bitmap.setPlanarColorModel(cm);
         if (prepared == index - interleave && //
                 (bitmap.getPixelType() == BitmapImage.BYTE_PIXEL || //
-                cm == ((ANIMFrame) track.getFrame(prepared)).getColorModel())) {
+                cm == track.getFrame(prepared).getColorModel())) {
             bitmap.convertToChunky(
                     frame.getTopBound(track),
                     frame.getLeftBound(track),
@@ -961,8 +961,8 @@ public class ANIMPlayer
 
         } else if (isPingPong && prepared == index + interleave &&//
                 (bitmap.getPixelType() == BitmapImage.BYTE_PIXEL || //
-                cm == ((ANIMFrame) track.getFrame(prepared)).getColorModel())) {
-            frame = (ANIMFrame) track.getFrame(index + interleave);
+                cm == track.getFrame(prepared).getColorModel())) {
+            frame = track.getFrame(index + interleave);
             bitmap.convertToChunky(
                     frame.getTopBound(track),
                     frame.getLeftBound(track),
@@ -977,7 +977,7 @@ public class ANIMPlayer
      * Prepare audio data for the specified frame index.
      */
     private void prepareAudio(int index) {
-        ANIMFrame frame = (ANIMFrame) track.getFrame(index);
+        ANIMFrame frame = track.getFrame(index);
         ANIMAudioCommand[] audioCommands = frame.getAudioCommands();
         if (audioCommands != null) {
             for (int i = 0; i < audioCommands.length; i++) {
@@ -1014,7 +1014,7 @@ public class ANIMPlayer
         displayFrame = index;
 
         if (debug && visualComponent != null) {
-            ANIMFrame frame = (ANIMFrame) track.getFrame(index);
+            ANIMFrame frame = track.getFrame(index);
             StringBuilder buf = new StringBuilder();
             buf.append("frame:");
             buf.append(index);
@@ -1076,7 +1076,7 @@ public class ANIMPlayer
         // Play audio data
         if (isActive()) {
 
-            ANIMFrame frame = (ANIMFrame) track.getFrame(index);
+            ANIMFrame frame = track.getFrame(index);
             ANIMAudioCommand[] audioCommands = frame.getAudioCommands();
             if (audioCommands != null) {
                 for (int i = 0; i < audioCommands.length; i++) {

@@ -395,8 +395,6 @@ public class SEQMovieTrack {
         return ((SEQFrame) frames_.elementAt(lastFrame)).getOperation();
     }
 
-    ;
-
     public void addFrame(SEQFrame frame) {
         int oldValue;
         synchronized (this) {

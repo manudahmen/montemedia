@@ -27,8 +27,8 @@ public interface Multiplexer {
      * @param track The track number.
      * @param buf The buffer containing the sample data.
      */
-    public void write(int track, Buffer buf) throws IOException;
+    void write(int track, Buffer buf) throws IOException;
 
     /** Closes the Multiplexer. */
-    public void close() throws IOException;
+    void close() throws IOException;
 }

@@ -21,7 +21,7 @@ import java.io.IOException;
  */
 public interface MovieWriter extends Multiplexer {
     /** Returns the file format. */
-    public Format getFileFormat() throws IOException;
+    Format getFileFormat() throws IOException;
 
     /** Adds a track to the writer for a suggested input format.
      * <p>
@@ -38,7 +38,7 @@ public interface MovieWriter extends Multiplexer {
      * format may be a refined version of the specified format.
      * @return The track number.
      */
-    public int addTrack(Format format) throws IOException;
+    int addTrack(Format format) throws IOException;
     
     /** Returns the media format of the specified track.
      * This is a refined version of the format that was requested when the
@@ -47,10 +47,10 @@ public interface MovieWriter extends Multiplexer {
      * @param track Track number.
      * @return The media format of the track.
      */
-    public Format getFormat(int track);
+    Format getFormat(int track);
     
     /** Returns the number of tracks. */
-    public int getTrackCount();
+    int getTrackCount();
 
     /** Writes a sample into the specified track.
      * Does nothing if the discard-flag in the buffer is set to true.
@@ -59,11 +59,11 @@ public interface MovieWriter extends Multiplexer {
      * @param buf The buffer containing the sample data.
      */
     @Override
-    public void write(int track, Buffer buf) throws IOException;
+    void write(int track, Buffer buf) throws IOException;
 
     /** Closes the writer. */
     @Override
-    public void close() throws IOException;
+    void close() throws IOException;
 
     /** Returns true if the limit for media data has been reached.
      * If this limit is reached, no more samples should be added to the movie.
@@ -73,10 +73,10 @@ public interface MovieWriter extends Multiplexer {
      * <p>
      * FIXME - Maybe replace by getCapacity():long. 
      */
-    public boolean isDataLimitReached();
+    boolean isDataLimitReached();
 
     /** Returns the duration of the track in seconds. */
-    public Rational getDuration(int track);
+    Rational getDuration(int track);
     /** Returns true if the specified track has no samples. */
-    public boolean isEmpty(int track);
+    boolean isEmpty(int track);
 }

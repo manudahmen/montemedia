@@ -19,7 +19,7 @@ package org.monte.media.binary;
  */
 public interface BinaryModel {
     /** Returns the total length of the binary data. */
-    public long getLength();
+    long getLength();
     /**
     Gets a sequence of bytes and copies them into the supplied byte array.
 
@@ -29,8 +29,8 @@ public interface BinaryModel {
     @exception ArrayIndexOutOfBoundsException  Thrown if the area covered by
     the arguments is not contained in the model.
      */
-    public int getBytes(long off, int len, byte[] target);
+    int getBytes(long off, int len, byte[] target);
 
     /** Closes the model and disposes all resources. */
-    public void close();
+    void close();
 }

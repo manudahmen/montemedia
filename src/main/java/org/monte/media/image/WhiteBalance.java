@@ -41,8 +41,6 @@ public class WhiteBalance {
     private WhiteBalance() {
     }
 
-    ;
-    
     /** Performs white balance adjustment using the "grey world" assumption
      * as described in [Ken09]. */
     public static BufferedImage whiteBalanceGreyworld(BufferedImage img) {

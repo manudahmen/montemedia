@@ -97,9 +97,9 @@ public class ANIMOutputStream {
     /**
      * The states of the movie output stream.
      */
-    private static enum States {
+    private enum States {
 
-        REALIZED, STARTED, FINISHED, CLOSED;
+        REALIZED, STARTED, FINISHED, CLOSED
     }
     /**
      * The current state of the movie output stream.

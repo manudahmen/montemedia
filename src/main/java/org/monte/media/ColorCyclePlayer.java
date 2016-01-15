@@ -24,17 +24,17 @@ package org.monte.media;
 public interface ColorCyclePlayer extends Player {
 
     /** Returns true if color cycling is started. */
-    public boolean isColorCyclingStarted();
+    boolean isColorCyclingStarted();
 
     /** Starts/Stops color cycling. */
-    public void setColorCyclingStarted(boolean b);
+    void setColorCyclingStarted(boolean b);
 
     /** Returns true if color cycling is available. */
-    public boolean isColorCyclingAvailable();
+    boolean isColorCyclingAvailable();
 
     /** Sets whether colors are blended during color cycling. */
-    public void setBlendedColorCycling(boolean newValue);
+    void setBlendedColorCycling(boolean newValue);
 
     /** Returns true if colors are blended during color cycling. */
-    public boolean isBlendedColorCycling();
+    boolean isBlendedColorCycling();
 }

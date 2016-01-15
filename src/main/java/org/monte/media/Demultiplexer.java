@@ -22,8 +22,8 @@ import java.io.IOException;
  */
 public interface Demultiplexer {
     /** Returns the tracks. */
-    public Track[] getTracks();
+    Track[] getTracks();
   
     /** Closes the Demultiplexer. */
-    public void close() throws IOException;
+    void close() throws IOException;
 }

@@ -544,11 +544,7 @@ public class IFFParser
      */
     protected boolean isDataChunk(IFFChunk chunk) {
         if (dataChunks == null) {
-            if (collectionChunks == null && propertyChunks == null) {
-                return true;
-            } else {
-                return false;
-            }
+            return collectionChunks == null && propertyChunks == null;
         } else {
             return dataChunks.containsKey(chunk);
         }
@@ -768,14 +764,10 @@ public class IFFParser
      * @return	True when the chunk ID is a valid Group ID.
      */
     public static boolean isGroupID(int id) {
-        if (id == ID_FORM
+        return id == ID_FORM
                 || id == ID_CAT
                 || id == ID_LIST
-                || id == ID_PROP) {
-            return true;
-        } else {
-            return false;
-        }
+                || id == ID_PROP;
     }
 
     /**
@@ -801,11 +793,8 @@ public class IFFParser
             return false;
         }
 
-        if (id != ID_FILLER && value1 == 0x20) {
-            return false;
-        }
+        return !(id != ID_FILLER && value1 == 0x20);
 
-        return true;
     }
 
     /**
@@ -865,11 +854,8 @@ public class IFFParser
             return false;
         }
 
-        if (isGroupID(id)) {
-            return false;
-        }
+        return !isGroupID(id);
 
-        return true;
     }
 
     /**

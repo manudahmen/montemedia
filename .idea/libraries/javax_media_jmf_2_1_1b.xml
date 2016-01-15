@@ -1,9 +1,7 @@
 <component name="libraryTable">
   <library name="javax.media:jmf:2.1.1b" type="repository">
     <properties maven-id="javax.media:jmf:2.1.1b" />
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/javax/media/jmf/2.1.1b/jmf-2.1.1b.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
     <SOURCES />
   </library>

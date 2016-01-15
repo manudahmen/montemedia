@@ -47,9 +47,9 @@ public class AVIOutputStream extends AbstractAVIStream {
     /**
      * The states of the movie output stream.
      */
-    protected static enum States {
+    protected enum States {
 
-        STARTED, FINISHED, CLOSED;
+        STARTED, FINISHED, CLOSED
     }
     /**
      * The current state of the movie output stream.

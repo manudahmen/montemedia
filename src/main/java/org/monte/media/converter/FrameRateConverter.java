@@ -108,7 +108,7 @@ public class FrameRateConverter extends AbstractVideoCodec {
         }
 
         // Convert from input frame rate to output frame rate.
-        Format vf = (Format) outputFormat;
+        Format vf = outputFormat;
         inputTime = inputTime.add(in.sampleDuration);
         Rational outputDuration = inputTime.subtract(outputTime);
         long jiffies = vf.get(FrameRateKey).getNumerator();

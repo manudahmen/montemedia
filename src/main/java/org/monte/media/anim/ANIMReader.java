@@ -104,12 +104,12 @@ public class ANIMReader {
             bitmap = bitmapEven;
             fetchedEven = index;
             if (fetched == index + interleave && track.getFrame(fetched).isBidirectional()) {
-                frame = (ANIMFrame) track.getFrame(fetched);
+                frame = track.getFrame(fetched);
                 frame.decode(bitmap, track);
                 return bitmap;
             } else {
                 if (fetched > index) {
-                    frame = (ANIMFrame) track.getFrame(0);
+                    frame = track.getFrame(0);
                     frame.decode(bitmap, track);
                     fetched = 0;
                 }
@@ -123,21 +123,21 @@ public class ANIMReader {
             bitmap = bitmapOdd;
             fetchedOdd = index;
             if (fetched == index + interleave && track.getFrame(fetched).isBidirectional()) {
-                frame = (ANIMFrame) track.getFrame(fetched);
+                frame = track.getFrame(fetched);
                 frame.decode(bitmap, track);
                 return bitmap;
             } else {
                 if (fetched > index) {
-                    frame = (ANIMFrame) track.getFrame(0);
+                    frame = track.getFrame(0);
                     frame.decode(bitmap, track);
-                    frame = (ANIMFrame) track.getFrame(1);
+                    frame = track.getFrame(1);
                     frame.decode(bitmap, track);
                     fetched = 1;
                 }
             }
         }
         for (int i = fetched + interleave; i <= index; i += interleave) {
-            frame = (ANIMFrame) track.getFrame(i);
+            frame = track.getFrame(i);
             frame.decode(bitmap, track);
         }
         return bitmap;
